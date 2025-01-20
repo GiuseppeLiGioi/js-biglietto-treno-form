@@ -7,18 +7,20 @@
 
 
 //FASE DI PREPARAZIONE (dichiarazione delle variabili e costanti)
-let etaPasseggero = parseInt(document.getElementById("eta"));
-let kmDaPercorrere = parseInt(document.getElementById("km"))
+let etaPasseggero= parseInt(document.getElementById('eta').value);
+let kmDaPercorrere= parseFloat(document.getElementById('km').value); 
 const prezzoKm=0.21;
 
-let bottone = document.getElementById("submit");
+let nomePasseggero = document.getElementById('name').value;
+
+let bottone = document.getElementById('btn_main');
 
 //FASE DI ELABORAZIONE
 let prezzoTot=kmDaPercorrere * prezzoKm;
 let sconto;
 let prezzoScontato;
 
-console.log(`${prezzoTot}`);
+
 
 
 
@@ -29,18 +31,25 @@ bottone.addEventListener("click" , function(){
   if(etaPasseggero < 18){
     sconto= (prezzoTot * 20) / 100;
     prezzoScontato = prezzoTot - sconto;
-    
-    console.log(`visto che sei minorenne hai diritto al 20% di sconto, ecco il prezzo scontato! ${prezzoScontato.toFixed(2)} euro. Altrimenti avresti pagato ${prezzoTot.toFixed(2)} euro.`)
+
+    document.getElementById('costo_span').textContent = prezzoScontato.toFixed(2);
+    document.getElementById('name_span').textContent = nomePasseggero.value;
     }
+
     else if(etaPasseggero > 65){
     sconto= (prezzoTot * 40) / 100;
     prezzoScontato = prezzoTot - sconto;
-    console.log(`visto che hai più di 65 anni, hai diritto al 40% di sconto, ecco il prezzo scontato! ${prezzoScontato.toFixed(2)} euro. Altrimenti avresti pagato ${prezzoTot.toFixed(2)} euro.`)
+    
+
+    document.getElementById('costo_span').textContent = prezzoScontato.toFixed(2);
+    document.getElementById('name_span').textContent = nomePasseggero.value;
+
     }
     else{
-        console.log(`il prezzo ammonta a: ${prezzoTot.toFixed(2)} euro.`);
+
+      document.getElementById('costo_span').textContent = prezzoTot.toFixed(2);
+      document.getElementById('name_span').textContent = nomePasseggero.value;
+        
     }
 })
 
-
-//MILESTONE 2

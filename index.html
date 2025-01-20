@@ -27,16 +27,12 @@
            
 
             <form id="form_list">
-                <input type="text" id="name" placeholder="Nome Cognome">
+                <input type="text" id="name"  placeholder="Nome" autocomplete="given-name">
                 <input type="number" id="km" placeholder="km da percorrere">
-                <select name="eta" id="eta">
-                    <option value="maggiorenne">maggiorenne</option>
-                    <option value="over_65">over65</option>
-                    <option value="minorenne">minorenne</option>
-                  </select>
+                <input type="number" id="eta" placeholder="eta">
                   <div class="bottom_form">
-                  <input class="btn" type="submit" value="Genera">
-                  <input class="btn" type="submit" value="Annulla">
+                  <input id="btn_main" type="submit" value="Genera">
+                  
                 </div>
     
             </form>
@@ -47,16 +43,12 @@
 
         <div class="second-mini-container">
             <h3 class="font_h_second">DETTAGLIO PASSEGGERI</h3>
-            <div>
-                <h4 class="font_h_second">
-                    NOME PASSEGGERO
-
-                </h4>
+            <br>
+            <div class="bottom_mini_container">
+                
                 <ul>
-                    <li>Offerta</li>
-                    <li>Carrozza</li>
-                    <li>Codice CP</li>
-                    <li>Costo Biglietto</li>
+                    <li> NOME PASSEGGERO:<span id="name_span">Nome</span></li>
+                    <li>Costo Biglietto:<span id="costo_span">Costo</span></li>
                 </ul>
             </div>
 

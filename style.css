@@ -33,6 +33,12 @@
     font-size: larger;
     
 }
+#btn_main{
+    color: #B91450;
+    font-size: larger;
+        
+    
+}
 
 .bottom_form{
     display: flex;
@@ -55,6 +61,8 @@
     margin: 0 auto;
     width: 80vw;
    border-radius: 25px;
+
+
    
    
 }
@@ -62,8 +70,16 @@
 .font_h_second{
     color: black;
     font-size: 18px;
+    background-color: gray;
 }
-#pippo{
-    text-align: left;
-    margin: 10px;
+.bottom_mini_container, ul, li{
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+padding:10px;
+
+flex-wrap: wrap;
+margin-left: 20px;
 }
