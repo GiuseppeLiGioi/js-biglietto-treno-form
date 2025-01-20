@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>treno_JS</title>
 </head>
 <body>
-    <btn id="btn">Premi</btn>
+    
+
+    <div class="container">
+        <form id="form_list">
+            <input type="text" id="name" placeholder="Nome Cognome">
+            <input type="number" id="km" placeholder="km da percorrere">
+            <select name="eta" id="eta">
+                <option value="maggiorenne">maggiorenne</option>
+                <option value="over_65">over65</option>
+                <option value="minorenne">minorenne</option>
+              </select>
+              <input id="submit" type="submit" value="Submit">
+
+        </form>
+    </div>
 
 
     <script src="./main.js"></script>

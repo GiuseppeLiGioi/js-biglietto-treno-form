@@ -7,11 +7,11 @@
 
 
 //FASE DI PREPARAZIONE (dichiarazione delle variabili e costanti)
-let etaPasseggero=prompt("inserisci la tua età");
-let kmDaPercorrere=prompt("inserisci i km che devi percorrere");
+let etaPasseggero = parseInt(document.getElementById("eta"));
+let kmDaPercorrere = parseInt(document.getElementById("km"))
 const prezzoKm=0.21;
 
-let bottone = document.getElementById("btn");
+let bottone = document.getElementById("submit");
 
 //FASE DI ELABORAZIONE
 let prezzoTot=kmDaPercorrere * prezzoKm;
