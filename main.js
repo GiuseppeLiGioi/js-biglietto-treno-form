@@ -7,49 +7,40 @@
 
 
 //FASE DI PREPARAZIONE (dichiarazione delle variabili e costanti)
-let etaPasseggero= parseInt(document.getElementById('eta').value);
-let kmDaPercorrere= parseFloat(document.getElementById('km').value); 
-const prezzoKm=0.21;
 
-let nomePasseggero = document.getElementById('name').value;
+const prezzoKm = 0.21;
 
 let bottone = document.getElementById('btn_main');
 
-//FASE DI ELABORAZIONE
-let prezzoTot=kmDaPercorrere * prezzoKm;
-let sconto;
-let prezzoScontato;
+// FASE DI ELABORAZIONE
+bottone.addEventListener("click", function (event) {
+  event.preventDefault(); // fermiamo l'invio del form con event
 
+  let etaPasseggero = parseInt(document.getElementById('eta').value);  // Ottieni l'età
+  let kmDaPercorrere = parseFloat(document.getElementById('km').value);  // Ottieni i km
+  let nomePasseggero = document.getElementById('name').value;  // Ottieni il nome
 
+  // Calcola il prezzo iniziale
+  let prezzoTot = kmDaPercorrere * prezzoKm;
+  let sconto;
+  let prezzoScontato;
 
-
-
-//FASE DI OUTPUT
-//MILESTONE 1:
-
-bottone.addEventListener("click" , function(){
-  if(etaPasseggero < 18){
-    sconto= (prezzoTot * 20) / 100;
+  // Calcola il prezzo in base all'età
+  if (etaPasseggero < 18) {
+    sconto = (prezzoTot * 20) / 100;
     prezzoScontato = prezzoTot - sconto;
-
     document.getElementById('costo_span').textContent = prezzoScontato.toFixed(2);
-    document.getElementById('name_span').textContent = nomePasseggero.value;
-    }
-
-    else if(etaPasseggero > 65){
-    sconto= (prezzoTot * 40) / 100;
+  } else if (etaPasseggero > 65) {
+    sconto = (prezzoTot * 40) / 100;
     prezzoScontato = prezzoTot - sconto;
-    
-
     document.getElementById('costo_span').textContent = prezzoScontato.toFixed(2);
-    document.getElementById('name_span').textContent = nomePasseggero.value;
+  } else {
+    document.getElementById('costo_span').textContent = prezzoTot.toFixed(2);
+  }
 
-    }
-    else{
+ 
+  document.getElementById('name_span').textContent = nomePasseggero;
+});
 
-      document.getElementById('costo_span').textContent = prezzoTot.toFixed(2);
-      document.getElementById('name_span').textContent = nomePasseggero.value;
-        
-    }
-})
+
 
