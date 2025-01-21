@@ -11,6 +11,8 @@
 const prezzoKm = 0.21;
 
 let bottone = document.getElementById('btn_main');
+let numeroCarrozza = document.getElementById('carrozza_span');
+let codSpan = document.getElementById('cod_span');
 
 // FASE DI ELABORAZIONE
 bottone.addEventListener("click", function (event) {
@@ -18,7 +20,9 @@ bottone.addEventListener("click", function (event) {
 
   let etaPasseggero = parseInt(document.getElementById('eta').value);  // Ottieni l'età
   let kmDaPercorrere = parseFloat(document.getElementById('km').value);  // Ottieni i km
-  let nomePasseggero = document.getElementById('name').value;  // Ottieni il nome
+  let nomePasseggero = document.getElementById('name').value;
+  //let numerocarrozza = document.getElementById('carrozza_span');
+  //let cod_span = document.getElementById('cod_span');
 
   // Calcola il prezzo iniziale
   let prezzoTot = kmDaPercorrere * prezzoKm;
@@ -40,6 +44,10 @@ bottone.addEventListener("click", function (event) {
 
  
   document.getElementById('name_span').textContent = nomePasseggero;
+  numeroCarrozza.innerHTML = Math.floor(Math.random()* (20 - 1)) + 1;
+
+
+  
 });
 
 
